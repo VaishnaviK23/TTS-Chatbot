@@ -96,9 +96,11 @@ def speak_text(text):
     play_obj = wave_obj.play()
     play_obj.wait_done()
 
-vector_store = create_vector_store("data/hp.pdf")
+filepath = "data/hp.pdf" # Replace with your PDF path
+vector_store = create_vector_store(filepath)
 llm = ChatOpenAI(model="gpt-3.5-turbo")
-# Example usage:
+
+# ChatBot:
 print("Type 'bye' or 'exit' to end the chat: ")
 user_input = input("You: ")
 while user_input.lower() != 'bye' and user_input.lower() != 'exit':
